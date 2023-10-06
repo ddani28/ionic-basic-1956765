@@ -1,10 +1,10 @@
 # Specifies intentionally untracked files to ignore when using Git
 # http://git-scm.com/docs/gitignore
 .vscode/*
-**/node_modules
-**/ionic.config.json
-**/package-lock.json
-**/package.json
+*/node_modules
+*/ionic.config.json
+*/package-lock.json
+*/package.json
 *~
 *.sw[mnpcod]
 .tmp
