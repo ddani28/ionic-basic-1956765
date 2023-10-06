@@ -12,7 +12,9 @@
 *.tmp.*
 UserInterfaceState.xcuserstate
 $RECYCLE.BIN/
-
+.angular/*
+node_modules/*
+.vscode/
 *.log
 log.txt
 
