@@ -17,7 +17,10 @@ node_modules/*
 .vscode/
 *.log
 log.txt
-
+ionic.config.json
+package-lock.json
+package.json
+node_modules/
 
 /.sourcemaps
 /.versions
