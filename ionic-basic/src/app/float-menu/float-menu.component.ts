@@ -29,7 +29,7 @@ export class FloatMenuComponent  implements OnInit, OnDestroy {
     private router: Router
   ) {
 
-    onAuthStateChanged(this.autService.getStateAuth(), user=>{
+    onAuthStateChanged(this.autService.getStateAuth(), (user: null | undefined)=>{
       if(user!=null && user != undefined){
         this.isLoged = true;
       }
@@ -57,7 +57,7 @@ export class FloatMenuComponent  implements OnInit, OnDestroy {
   }
   
   onMenuOpen(){
-    onAuthStateChanged(this.autService.getStateAuth(), user=>{
+    onAuthStateChanged(this.autService.getStateAuth(), (user: null | undefined)=>{
       if(user!=null && user != undefined){
         this.datosMenu =[
           {nombre: 'Alumnos',enlace:'/alumnos',
@@ -66,6 +66,8 @@ export class FloatMenuComponent  implements OnInit, OnDestroy {
       icono:'restaurant-outline'},
       {nombre: 'inicio',enlace:'/inicio',
       icono:'navigate-outline'},
+      {nombre: 'Turismo',enlace:'/destinos',
+      icono:'airplane'},
       {nombre: 'Tabs',enlace:'/tabs',
       icono:'folder-outline'},
       {nombre: 'login',enlace:'/login',

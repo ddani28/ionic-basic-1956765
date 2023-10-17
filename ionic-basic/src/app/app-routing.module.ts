@@ -41,6 +41,10 @@ const routes: Routes = [
     path: 'presupuesto',
     loadChildren: () => import('./presupuesto/presupuesto.module').then( m => m.PresupuestoPageModule),
     canActivate: [AutGuardGuard]
+  },{
+    path: 'destinos',
+    loadChildren: () => import('./destinos/destinos.module').then( m => m.DestinosPageModule),
+    canActivate: [AutGuardGuard]  
   }
 
 ];
