@@ -9,24 +9,39 @@ const routes: Routes = [
   },
   {
     path: '',
-//@@ -13,16 +14,32 @@ const routes: Routes = [
+
+    redirectTo: '/main/receta',
+    pathMatch: 'full'
   },
   {
-    path: 'receta',
     
-    loadChildren: () => import('./receta/receta.module').then( m => m.RecetaPageModule),
-    canActivate: [AutGuardGuard]
-  },
-  {
-    path: 'detalle-receta',
-   
-    loadChildren: () => import('./detalle-receta/detalle-receta.module').then( m => m.DetalleRecetaPageModule),
-    canActivate: [AutGuardGuard]
-  },
-  {
-    path: 'tabs',
-   
-    loadChildren: () => import('./tabs/tabs.module').then( m => m.TabsPageModule),
+    path: 'main',
+    children:[
+      {
+        path: 'presupuesto',
+        loadChildren: () => import('./presupuesto/presupuesto.module').then( m => m.PresupuestoPageModule)
+      },
+      {
+        path: 'destinos',
+        loadChildren: () => import('./destinos/destinos.module').then( m => m.DestinosPageModule)
+      },
+      {
+        path: 'receta',
+        loadChildren: () => import('./receta/receta.module').then( m => m.RecetaPageModule)
+      },
+      {
+        path: 'detalle-receta',
+        loadChildren: () => import('./detalle-receta/detalle-receta.module').then( m => m.DetalleRecetaPageModule)
+      },
+      {
+        path: 'tabs',
+        loadChildren: () => import('./tabs/tabs.module').then( m => m.TabsPageModule)
+      },
+      {
+        path: 'alumnos',
+        loadChildren: () => import('./alumnos/alumnos.module').then( m => m.AlumnosPageModule)
+      }
+    ],
     canActivate: [AutGuardGuard]
   },
   {
@@ -36,15 +51,7 @@ const routes: Routes = [
   {
     path: 'register',
     loadChildren: () => import('./register/register.module').then( m => m.RegisterPageModule)
-  },
-  {
-    path: 'presupuesto',
-    loadChildren: () => import('./presupuesto/presupuesto.module').then( m => m.PresupuestoPageModule),
-    canActivate: [AutGuardGuard]
-  },{
-    path: 'destinos',
-    loadChildren: () => import('./destinos/destinos.module').then( m => m.DestinosPageModule),
-    canActivate: [AutGuardGuard]  
+  
   }
 
 ];
