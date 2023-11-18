@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { onAuthStateChanged, signOut } from "firebase/auth";
 import { Router } from '@angular/router';
 import { AutService } from '../service/aut.service';
+import { StorageService } from '../service/storage.service';
 
 @Component({
   selector: 'app-home',
@@ -14,7 +15,8 @@ export class LogoutPage {
 
   constructor(
     private authService: AutService,
-    private router: Router
+    private router: Router,
+    private storageService: StorageService
   ) {
 
     onAuthStateChanged(this.authService.getStateAuth(), (user: null | undefined)=>{
@@ -29,6 +31,9 @@ export class LogoutPage {
     signOut(this.authService.getStateAuth()).then(()=>{
       console.log("Logout!");
       this.router.navigateByUrl('/login');
+      console.info('Usuario a borrar:'+this.storageService.getValue('usuario'));
+      
+      this.storageService.limpiarStorage();
     }).catch(()=>{
 
     });

@@ -71,7 +71,9 @@
     "@ionic/pwa-elements": "^3.2.2",
     "@capacitor/android": "^5.5.1",
     "@capacitor/ios": "^5.5.1",
-    "or": "^0.2.0"
+    "or": "^0.2.0",
+    "@ionic/storage": "^4.0.0",
+    "@ionic/storage-angular": "^4.0.0"
 
   },
   "description": "An Ionic project"
