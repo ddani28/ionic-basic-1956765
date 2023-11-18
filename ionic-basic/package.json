@@ -68,7 +68,10 @@
     "@capacitor/camera": "^5.0.7",
     "@capacitor/filesystem": "^5.1.4",
     "@capacitor/preferences": "^5.0.6",
-    "@ionic/pwa-elements": "^3.2.2"
+    "@ionic/pwa-elements": "^3.2.2",
+    "@capacitor/android": "^5.5.1",
+    "@capacitor/ios": "^5.5.1",
+    "or": "^0.2.0"
 
   },
   "description": "An Ionic project"
